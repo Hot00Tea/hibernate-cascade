@@ -27,7 +27,7 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new DataProcessingException("Can't save massage", e);
+            throw new DataProcessingException("Can't save message", e);
         } finally {
             if (session != null) {
                 session.close();
@@ -45,8 +45,7 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
     @Override
     public List<Message> getAll() {
         try (Session session = factory.openSession()) {
-            return session.createQuery("FROM Massage", Message.class).getResultList();
-
+            return session.createQuery("FROM Message", Message.class).getResultList();
         }
     }
 
