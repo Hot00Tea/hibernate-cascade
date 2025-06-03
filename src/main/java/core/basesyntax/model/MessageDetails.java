@@ -17,8 +17,16 @@ public class MessageDetails {
     private String sender;
     private LocalDateTime sentTime;
 
-    @OneToOne (mappedBy = "massageDetails")
+    @OneToOne(mappedBy = "messageDetails")
     private Message message;
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
 
     public Long getId() {
         return id;
