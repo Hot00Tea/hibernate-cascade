@@ -17,7 +17,7 @@ public class MessageDetails {
     private String sender;
     private LocalDateTime sentTime;
 
-    @OneToOne(mappedBy = "messageDetails")
+    @OneToOne
     private Message message;
 
     public Message getMessage() {
